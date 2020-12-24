@@ -3,6 +3,8 @@ import random
 import string
 from tkinter import *
 
+root = Tk()
+
 class Password:
 
     password = []
@@ -25,12 +27,25 @@ class Password:
         for text in self.password:
             print(f'{text}', end='')
         
-class GUI:
+class GUI(Password):
+    def __init__(self):
+        self.root = root
+        self.screen()
+
+    def screen(self):
+        self.root.title('Password Manager 1.0')
+        self.root.configure(bg='black')
+        self.root.geometry('700x500+300+120')
+        self.root.mainloop()
+
+
+class BackEnd:
+    pass
     
 
 
 if __name__ == '__main__':
 
-    a1 = Password(11, 'instagram')
-    a1.add_password()
+    GUI()
+
 
