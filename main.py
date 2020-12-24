@@ -25,7 +25,8 @@ class Password:
         #self.password = str(self.password)  
         print(f'Password with {self._number_char} characters for {self._context}: ', end='')    
         for text in self.password:
-            print(f'{text}', end='')
+            self.new_pwd += f'{text}'
+        print(self.new_pwd)
         
 class GUI(Password):
     def __init__(self):
@@ -34,8 +35,11 @@ class GUI(Password):
 
     def screen(self):
         self.root.title('Password Manager 1.0')
-        self.root.configure(bg='black')
+        self.root.configure(bg='#77777e')
         self.root.geometry('700x500+300+120')
+        self.root.resizable(True, True)
+        self.root.maxsize(width=800, height=600)
+        self.root.minsize(width=500, height=350)
         self.root.mainloop()
 
 
@@ -46,6 +50,7 @@ class BackEnd:
 
 if __name__ == '__main__':
 
-    GUI()
+    a1 = Password(9, 'Youtube')
+    a1.add_password()
 
 
